@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace advent_of_code_2017
 {
-    internal class Program
+    internal class Day1of1
     {
         public static void Main(string[] args)
         {
