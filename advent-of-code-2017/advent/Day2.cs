@@ -7,8 +7,10 @@ namespace advent
     {
         public static int Problem1(string input)
         {
-            var sum = 0;
-            return sum;
+            var regex = new Regex(@"\n");
+            return regex.Split(input)
+                .Select(ProcessRow)
+                .Sum();
         }
 
         public static int ProcessRow(string row)
