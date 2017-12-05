@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace advent
@@ -14,11 +15,12 @@ namespace advent
 
         public static int Problem2(string input)
         {
-            var sum = 0;
-            return sum;
+            return SplitTable(input)
+                .Select(ProcessRow2)
+                .Sum();
         }
 
-        private static string[] SplitTable(string input)
+        private static IEnumerable<string> SplitTable(string input)
         {
             var regex = new Regex(@"\n");
             return regex.Split(input);
@@ -34,8 +36,22 @@ namespace advent
 
         public static int ProcessRow2(string row)
         {
-            var sum = 0;
-            return sum;
+            var nums = SplitRow(row);
+            for (var i = 0; i < nums.Length; i++)
+            {
+                for (var j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i] % nums[j] == 0)
+                    {
+                        return nums[i] / nums[j];
+                    }
+                    if (nums[j] % nums[i] == 0)
+                    {
+                        return nums[j] / nums[i];
+                    }
+                }
+            }
+            return 0;
         }
 
         private static int[] SplitRow(string row)
