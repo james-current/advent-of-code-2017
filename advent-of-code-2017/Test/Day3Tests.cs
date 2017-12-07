@@ -55,5 +55,54 @@ namespace Test
             var test = Day3.Problem1(real);
             Assert.Equal(419, test);
         }
+
+        [Fact]
+        public void Test8Problem2()
+        {
+            var test = Day3.Problem2(8);
+            Assert.Equal(10, test);
+        }
+
+        [Fact]
+        public void Test24Problem2()
+        {
+            var test = Day3.Problem2(24);
+            Assert.Equal(25, test);
+        }
+
+        [Fact]
+        public void Test25Problem2()
+        {
+            var test = Day3.Problem2(25);
+            Assert.Equal(26, test);
+        }
+
+        [Fact]
+        public void Test53Problem2()
+        {
+            var test = Day3.Problem2(53);
+            Assert.Equal(54, test);
+        }
+
+        [Fact]
+        public void Test145Problem2()
+        {
+            var test = Day3.Problem2(145);
+            Assert.Equal(147, test);
+        }
+
+        [Fact]
+        public void Test879Problem2()
+        {
+            var test = Day3.Problem2(879);
+            Assert.Equal(880, test);
+        }
+
+        [Fact]
+        public void Test930Problem2()
+        {
+            var test = Day3.Problem2(930);
+            Assert.Equal(931, test);
+        }
     }
 }
