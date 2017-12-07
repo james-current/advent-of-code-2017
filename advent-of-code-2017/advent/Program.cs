@@ -7,7 +7,7 @@ namespace advent
     {
         public static void Main(string[] args)
         {
-            var output = Day3.Problem1(289326);
+            var output = Day3.Problem2(289326);
             Console.WriteLine(output);
         }
     }
