@@ -26,6 +26,13 @@ namespace Test
             Assert.Equal(10, test);
         }
 
+        [Fact]
+        public void TestProblem2Real()
+        {
+            var test = Day5.Problem2(Real);
+            Assert.Equal(27283023, test);
+        }
+
         private const string TestVal = "0\n3\n0\n1\n-3";
 
         private const string Real = @"1

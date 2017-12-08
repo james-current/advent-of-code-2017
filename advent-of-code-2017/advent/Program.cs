@@ -6,7 +6,7 @@ namespace advent
     {
         public static void Main(string[] args)
         {
-            var output = Day5.Problem1(@"1
+            var output = Day5.Problem2(@"1
 1
 0
 -1
