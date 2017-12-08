@@ -20,6 +20,12 @@ namespace advent
             return words.Length == wordsSet.Count;
         }
 
+        public static int Problem2(string passphrases)
+        {
+            var regex = new Regex(@"\n");
+            return regex.Split(passphrases).Select(IsValidPassphrase2).Count(x => x);
+        }
+
         public static bool IsValidPassphrase2(string passphrase)
         {
             var regex = new Regex(@"\s");

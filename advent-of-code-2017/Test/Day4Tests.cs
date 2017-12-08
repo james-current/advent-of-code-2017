@@ -75,6 +75,24 @@ namespace Test
             Assert.False(test);
         }
 
+        [Fact]
+        public void TestProblem2()
+        {
+            var test = Day4.Problem2(@"abcde fghij
+abcde xyz ecdab
+a ab abc abd abf abj
+iiii oiii ooii oooi oooo
+oiii ioii iioi iiio");
+            Assert.Equal(3, test);
+        }
+
+        [Fact]
+        public void TestProblem2Real()
+        {
+            var test = Day4.Problem2(real);
+            Assert.Equal(208, test);
+        }
+
         private const string real = @"oaoe rxeq vssdqtu xrk cjv yaoqp loo
 mveua dogbam szydvri hyzk lbega abzqw xwjn wniug kwbre
 npaoy uivpxwd oynpa rcdk uixpvdw

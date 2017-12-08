@@ -7,7 +7,7 @@ namespace advent
     {
         public static void Main(string[] args)
         {
-            var output = Day4.Problem1(@"oaoe rxeq vssdqtu xrk cjv yaoqp loo
+            var output = Day4.Problem2(@"oaoe rxeq vssdqtu xrk cjv yaoqp loo
 mveua dogbam szydvri hyzk lbega abzqw xwjn wniug kwbre
 npaoy uivpxwd oynpa rcdk uixpvdw
 yserir iikzcm ieuroca iuwcfov rvb giti crdpdcv mxpps
