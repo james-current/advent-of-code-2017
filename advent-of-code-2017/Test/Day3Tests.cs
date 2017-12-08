@@ -5,7 +5,7 @@ namespace Test
 {
     public class Day3Tests
     {
-        const int real = 289326;
+        private const int Real = 289326;
 
         [Fact]
         public void Test1CalculateLocation()
@@ -52,7 +52,7 @@ namespace Test
         [Fact]
         public void TestRealProblem1()
         {
-            var test = Day3.Problem1(real);
+            var test = Day3.Problem1(Real);
             Assert.Equal(419, test);
         }
 

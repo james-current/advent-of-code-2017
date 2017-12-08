@@ -5,7 +5,7 @@ namespace Test
 {
     public class Day2Tests
     {
-        private const string real = @"1136	1129	184	452	788	1215	355	1109	224	1358	1278	176	1302	186	128	1148
+        private const string Real = @"1136	1129	184	452	788	1215	355	1109	224	1358	1278	176	1302	186	128	1148
 242	53	252	62	40	55	265	283	38	157	259	226	322	48	324	299
 2330	448	268	2703	1695	2010	3930	3923	179	3607	217	3632	1252	231	286	3689
 89	92	903	156	924	364	80	992	599	998	751	827	110	969	979	734
@@ -53,7 +53,7 @@ namespace Test
         [Fact]
         public void TestProblem1Rows()
         {
-            var input = "5 1 9 5\n7 5 3\n2 4 6 8";
+            const string input = "5 1 9 5\n7 5 3\n2 4 6 8";
             var test = Day2.Problem1(input);
             Assert.Equal(18, test);
         }
@@ -82,7 +82,7 @@ namespace Test
         [Fact]
         public void TestProblem2Rows()
         {
-            var input = "5 9 2 8\n9 4 7 3\n3 8 6 5";
+            const string input = "5 9 2 8\n9 4 7 3\n3 8 6 5";
             var test = Day2.Problem2(input);
             Assert.Equal(9, test);
         }
@@ -90,14 +90,14 @@ namespace Test
         [Fact]
         public void TestRealProblem1()
         {
-            var test = Day2.Problem1(real);
+            var test = Day2.Problem1(Real);
             Assert.Equal(37923, test);
         }
 
         [Fact]
         public void TestRealProblem2()
         {
-            var test = Day2.Problem2(real);
+            var test = Day2.Problem2(Real);
             Assert.Equal(263, test);
         }
     }

@@ -36,7 +36,7 @@ namespace Test
         [Fact]
         public void TestProblem1Real()
         {
-            var test = Day4.Problem1(real);
+            var test = Day4.Problem1(Real);
             Assert.Equal(386, test);
         }
 
@@ -89,11 +89,11 @@ oiii ioii iioi iiio");
         [Fact]
         public void TestProblem2Real()
         {
-            var test = Day4.Problem2(real);
+            var test = Day4.Problem2(Real);
             Assert.Equal(208, test);
         }
 
-        private const string real = @"oaoe rxeq vssdqtu xrk cjv yaoqp loo
+        private const string Real = @"oaoe rxeq vssdqtu xrk cjv yaoqp loo
 mveua dogbam szydvri hyzk lbega abzqw xwjn wniug kwbre
 npaoy uivpxwd oynpa rcdk uixpvdw
 yserir iikzcm ieuroca iuwcfov rvb giti crdpdcv mxpps
