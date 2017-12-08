@@ -1,4 +1,7 @@
-﻿namespace advent
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace advent
 {
     public class Day4
     {
@@ -9,7 +12,10 @@
 
         public static bool IsValidPassphrase(string passphrase)
         {
-            return false;
+            var regex = new Regex(@"\s");
+            var words = regex.Split(passphrase);
+            var wordsSet = new HashSet<string>(words);
+            return words.Length == wordsSet.Count;
         }
     }
 }
