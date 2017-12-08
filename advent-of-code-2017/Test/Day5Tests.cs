@@ -8,18 +8,27 @@ namespace Test
         [Fact]
         public void TestProblem1()
         {
-            var test = Day5.Problem1("0\n3\n0\n1\n-3");
+            var test = Day5.Problem1(TestVal);
             Assert.Equal(5, test);
         }
 
         [Fact]
         public void TestProblem1Real()
         {
-            var test = Day5.Problem1(real);
+            var test = Day5.Problem1(Real);
             Assert.Equal(354121, test);
         }
 
-        private const string real = @"1
+        [Fact]
+        public void TestProblem2()
+        {
+            var test = Day5.Problem2(TestVal);
+            Assert.Equal(10, test);
+        }
+
+        private const string TestVal = "0\n3\n0\n1\n-3";
+
+        private const string Real = @"1
 1
 0
 -1
