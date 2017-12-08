@@ -25,5 +25,12 @@ namespace Test
             var test = Day4.IsValidPassphrase("aa bb cc dd aaa");
             Assert.Equal(true, test);
         }
+
+        [Fact]
+        public void TestProblem1()
+        {
+            var test = Day4.Problem1("aa bb cc dd ee\naa bb cc dd aa\naa bb cc dd aaa");
+            Assert.Equal(2, test);
+        }
     }
 }
