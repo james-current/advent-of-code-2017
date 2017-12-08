@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace advent
 {
-    public class Day4
+    public static class Day4
     {
         public static int Problem1(string passphrases)
         {
-            return -1;
+            var regex = new Regex(@"\n");
+            return regex.Split(passphrases).Select(IsValidPassphrase).Count(x => x);
         }
 
         public static bool IsValidPassphrase(string passphrase)
