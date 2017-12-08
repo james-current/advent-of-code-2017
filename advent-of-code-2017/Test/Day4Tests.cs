@@ -6,24 +6,24 @@ namespace Test
     public class Day4Tests
     {
         [Fact]
-        public void TestIsValidPassphraseValid()
+        public void TestIsValidPassphrase1Valid()
         {
-            var test = Day4.IsValidPassphrase("aa bb cc dd ee");
-            Assert.Equal(true, test);
+            var test = Day4.IsValidPassphrase1("aa bb cc dd ee");
+            Assert.True(test);
         }
 
         [Fact]
-        public void TestIsValidPassphraseInvalid()
+        public void TestIsValidPassphrase1Invalid()
         {
-            var test = Day4.IsValidPassphrase("aa bb cc dd aa");
-            Assert.Equal(false, test);
+            var test = Day4.IsValidPassphrase1("aa bb cc dd aa");
+            Assert.False(test);
         }
 
         [Fact]
-        public void TestIsValidPassphraseWordContainsAnotherWord()
+        public void TestIsValidPassphrase1WordContainsAnotherWord()
         {
-            var test = Day4.IsValidPassphrase("aa bb cc dd aaa");
-            Assert.Equal(true, test);
+            var test = Day4.IsValidPassphrase1("aa bb cc dd aaa");
+            Assert.True(test);
         }
 
         [Fact]
@@ -38,6 +38,41 @@ namespace Test
         {
             var test = Day4.Problem1(real);
             Assert.Equal(386, test);
+        }
+
+        [Fact]
+        public void TestIsValidPassphrase2BasicValid()
+        {
+            var test = Day4.IsValidPassphrase2("abcde fghij");
+            Assert.True(test);
+        }
+
+        [Fact]
+        public void TestIsValidPassphrase2BasicInvalid()
+        {
+            var test = Day4.IsValidPassphrase2("abcde xyz ecdab");
+            Assert.False(test);
+        }
+
+        [Fact]
+        public void TestIsValidPassphrase2AllLettersNeedToBeUsedValid()
+        {
+            var test = Day4.IsValidPassphrase2("a ab abc abd abf abj");
+            Assert.True(test);
+        }
+
+        [Fact]
+        public void TestIsValidPassphrase2LongerValid()
+        {
+            var test = Day4.IsValidPassphrase2("iiii oiii ooii oooi oooo");
+            Assert.True(test);
+        }
+
+        [Fact]
+        public void TestIsValidPassphrase2AllTheSameLettersInvalid()
+        {
+            var test = Day4.IsValidPassphrase2("oiii ioii iioi iiio");
+            Assert.False(test);
         }
 
         private const string real = @"oaoe rxeq vssdqtu xrk cjv yaoqp loo
