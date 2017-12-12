@@ -10,12 +10,24 @@ namespace advent
         public static int Problem1(string input)
         {
             var memBanks = ParseInput(input);
-            var seen = new HashSet<int[]>(new IntArrayEqualityComparer()) {(int[]) memBanks.Clone()};
-            var steps = 0;
+            var seen = new HashSet<string>() {string.Join("", memBanks)};
+            MemCycle(seen, memBanks);
+            return seen.Count;
+        }
 
+        public static int Problem2(string input)
+        {
+            var memBanks = ParseInput(input);
+            var seen = new HashSet<string>() {string.Join("", memBanks)};
+            var dupe = MemCycle(seen, memBanks);
+            var dupeIndex = seen.ToList().IndexOf(dupe);
+            return seen.Count - dupeIndex;
+        }
+
+        private static string MemCycle(ISet<string> seen, int[] memBanks)
+        {
             while (true)
             {
-                steps++;
                 var max = memBanks.Max();
                 var indexOfMax = Array.IndexOf(memBanks, max);
                 memBanks[indexOfMax] = 0;
@@ -32,12 +44,14 @@ namespace advent
                     }
                 }
 
-                if (seen.Contains(memBanks))
+                var memBanksString = string.Join("", memBanks);
+
+                if (seen.Contains(memBanksString))
                 {
-                    return steps;
+                    return memBanksString;
                 }
 
-                seen.Add((int[]) memBanks.Clone());
+                seen.Add(memBanksString);
             }
         }
 
@@ -45,23 +59,6 @@ namespace advent
         {
             var regex = new Regex(@"\s");
             return regex.Split(input).Select(int.Parse).ToArray();
-        }
-    }
-
-    internal class IntArrayEqualityComparer : IEqualityComparer<int[]>
-    {
-        public bool Equals(int[] x, int[] y)
-        {
-            if (x == null)
-            {
-                return y == null;
-            }
-            return !x.Where((t, i) => t != y[i]).Any();
-        }
-
-        public int GetHashCode(int[] obj)
-        {
-            return obj.Aggregate(17, (current, i) => current * 23 + i);
         }
     }
 }
