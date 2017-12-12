@@ -28,5 +28,12 @@ namespace Test
             var test = Day6.Problem2(TestInput);
             Assert.Equal(4, test);
         }
+
+        [Fact]
+        public void TestProblem2Real()
+        {
+            var test = Day6.Problem2(Real);
+            Assert.Equal(1695, test);
+        }
     }
 }
