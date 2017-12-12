@@ -1,4 +1,5 @@
-﻿using advent;
+﻿using System.Linq;
+using advent;
 using Xunit;
 
 namespace Test
@@ -14,6 +15,20 @@ namespace Test
         }
 
         [Fact]
+        public void TestProblem1Real()
+        {
+            var test = Day7.Problem1(Real);
+            Assert.Equal("gmcrj", test);
+        }
+
+        [Fact]
+        public void TestProblem2()
+        {
+            var test = Day7.Problem2(TestInput);
+            Assert.Equal(60, test);
+        }
+
+        [Fact]
         public void TestGetProgramName()
         {
             var test = Day7.GetProgramName("abcd aoeuoeu aoeu");
@@ -25,6 +40,15 @@ namespace Test
         {
             var test = Day7.GetProgramList("-> ktlj, cntj, xhth");
             Assert.Equal(new [] {"ktlj", "cntj", "xhth"}, test);
+        }
+
+        [Fact]
+        public void TestGetProgramWeight()
+        {
+            var programs = Day7.ParseInput(TestInput).ToArray();
+            var programMap = programs.ToDictionary(Day7.GetProgramName, x => x);
+            var test = Day7.GetProgramWeight("tknk (41) -> ugml, padx, fwft", programMap);
+            Assert.Equal(778, test);
         }
 
         private const string TestInput = @"pbga (66)
