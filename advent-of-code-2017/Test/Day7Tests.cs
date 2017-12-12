@@ -1,12 +1,46 @@
-﻿using System;
+﻿using advent;
+using Xunit;
 
-namespace advent
+namespace Test
 {
-    public static class Program
+    public class Day7Tests
     {
-        public static void Main(string[] args)
+
+        [Fact]
+        public void TestProblem1()
         {
-            var output = Day7.Problem1(@"suvtxzq (242) -> tdoxrnb, oanxgk
+            var test = Day7.Problem1(TestInput);
+            Assert.Equal("tknk", test);
+        }
+
+        [Fact]
+        public void TestGetProgramName()
+        {
+            var test = Day7.GetProgramName("abcd aoeuoeu aoeu");
+            Assert.Equal("abcd", test);
+        }
+
+        [Fact]
+        public void TestGetProgramList()
+        {
+            var test = Day7.GetProgramList("-> ktlj, cntj, xhth");
+            Assert.Equal(new [] {"ktlj", "cntj", "xhth"}, test);
+        }
+
+        private const string TestInput = @"pbga (66)
+xhth (57)
+ebii (61)
+havc (66)
+ktlj (57)
+fwft (72) -> ktlj, cntj, xhth
+qoyq (66)
+padx (45) -> pbga, havc, qoyq
+tknk (41) -> ugml, padx, fwft
+jptl (61)
+ugml (68) -> gyxo, ebii, jptl
+gyxo (61)
+cntj (57)";
+        private const string Real = @"suvtxzq (242) -> tdoxrnb, oanxgk
 smjsfux (7)
 oanxgk (68)
 tvvfszm (66)
@@ -1103,8 +1137,6 @@ gfxra (782) -> lvxmqy, ukcqez, wehkpx, slavm, ovyifn
 mtjcvaf (20)
 urxki (409)
 iygpmov (46) -> jprrnd, wojfh, vhrxv, yeogm
-lfkqyf (237)");
-            Console.WriteLine(output);
-        }
+lfkqyf (237)";
     }
 }
